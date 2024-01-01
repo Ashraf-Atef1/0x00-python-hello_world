@@ -9,11 +9,18 @@
  */
 int check_cycle(listint_t *list)
 {
+	unsigned int i = 0;
+	unsigned int j = i - 1;
+
 	while (list)
 	{
 		if (list->next && list <= list->next)
 			return (1);
 		list = list->next;
+	}
+	while (i < j)
+	{
+		i++;
 	}
 	return (0);
 }
