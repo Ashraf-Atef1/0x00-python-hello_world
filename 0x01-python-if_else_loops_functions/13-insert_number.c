@@ -5,7 +5,7 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *cNode = *head;
 	while (cNode)
 	{
-		if (!cNode->next)
+		if (!cNode->next || cNode->next->n > number)
 		{
 			listint_t *newNode = (listint_t *)malloc(sizeof(listint_t));
 			if (!newNode)
