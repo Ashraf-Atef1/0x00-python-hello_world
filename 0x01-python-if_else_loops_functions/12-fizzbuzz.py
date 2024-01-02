@@ -9,4 +9,4 @@ def fizzbuzz():
         if num % 3 and num % 5:
             to_be_print += str(num)
         to_be_print += " "
-    print(to_be_print, end = "")
+    print(to_be_print, end="")
