@@ -1,3 +1,3 @@
-#!/bin/python3
-for char in range(ord('a'), ord('z') + 1):
-    print("{}".format(chr(char)), end='')
+#!/usr/bin/python3
+for letter in map(chr, range(97, 123)):
+    print(letter, end="")
