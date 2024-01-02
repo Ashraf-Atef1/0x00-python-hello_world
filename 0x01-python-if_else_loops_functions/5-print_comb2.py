@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 for num in range(0, 99):
-    print("{:2d}, ".format(num), end="")
+    print("{:s}, ".format(str(num).zfill(2)), end="")
 print("99")
