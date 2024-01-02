@@ -2,4 +2,4 @@
 def uppercase(str):
     for c in str:
         print("{}".format(c.title()), end="")
-print()
+    print()
