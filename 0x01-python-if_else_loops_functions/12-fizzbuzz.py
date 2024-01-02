@@ -4,9 +4,9 @@ def fizzbuzz():
     for num in range(1, 101):
         if not num % 3:
             to_be_print += "Fizz"
-        elif not num % 5:
+        if not num % 5:
             to_be_print += "Buzz"
-        else:
+        if num % 3 and num % 5:
             to_be_print += str(num)
         to_be_print += " "
     print(to_be_print)
