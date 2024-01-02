@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-def add(a, b):
-	return a + b
+def print_last_digit(number):
+    number = number % 10 if number >= 0 else -number % 10
+    print("{}".format(number), end="")
+    return number
