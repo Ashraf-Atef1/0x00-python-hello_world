@@ -7,4 +7,4 @@ if __name__ == "__main__":
     else:
         print(f"{argc} arguments:")
         for arg_num, arg_name in enumerate(argv[1:], 1):
-            print(f"{arg_num}: {arg_name}")
+            print("{:d}: {:s}".format(arg_num, arg_name))
