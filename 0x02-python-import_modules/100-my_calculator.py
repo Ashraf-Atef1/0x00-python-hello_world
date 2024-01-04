@@ -8,13 +8,13 @@ if __name__ == "__main__":
         b = int(argv[3])
         operation = argv[2]
         if operation == "+":
-            print("{} {} {} = {}".format(a, operation, b, add(a,b)))
+            print("{} {} {} = {}".format(a, operation, b, add(a, b)))
         elif operation == "-":
-            print("{} {} {} = {}".format(a, operation, b, sub(a,b)))
+            print("{} {} {} = {}".format(a, operation, b, sub(a, b)))
         elif operation == "*":
-            print("{} {} {} = {}".format(a, operation, b, mul(a,b)))
+            print("{} {} {} = {}".format(a, operation, b, mul(a, b)))
         elif operation == "/":
-            print("{} {} {} = {}".format(a, operation, b, div(a,b)))
+            print("{} {} {} = {}".format(a, operation, b, div(a, b)))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
