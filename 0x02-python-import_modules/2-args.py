@@ -5,6 +5,9 @@ if __name__ == "__main__":
     if argc == 0:
         print("0 arguments.")
     else:
-        print(f"{argc} arguments:")
+        if argc == 1:
+            print(f"{argc} argument:")
+        else:
+            print(f"{argc} arguments:")
         for arg_num, arg_name in enumerate(argv[1:], 1):
             print("{:d}: {:s}".format(arg_num, arg_name))
