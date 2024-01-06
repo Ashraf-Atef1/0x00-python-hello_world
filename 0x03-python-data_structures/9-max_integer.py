@@ -8,4 +8,4 @@ def max_integer(my_list=[]):
     max_num = None
     for num in my_list:
         max_num = compare_large(max_num if max_num else 0, num)
-    return max_num
+    return max_num if max_num is not None else "None"
