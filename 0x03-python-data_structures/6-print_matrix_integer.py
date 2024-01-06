@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     i = 0
+    if len(matrix[0]) == 0:
+        print()
     for array in matrix:
         while i < len(array):
             if i == len(array) - 1:
