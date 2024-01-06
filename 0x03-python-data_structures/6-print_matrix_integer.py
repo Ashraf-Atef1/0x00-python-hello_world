@@ -2,4 +2,4 @@
 def print_matrix_integer(matrix=[[]]):
     for l in matrix:
         line = " ".join(map(str,l))
-        print(line)
+        print("{:s}".format(line))
