@@ -8,8 +8,7 @@
  * @is_palindrome: the value to return
  * Return: return 1 if palindrome and 0 if not
  */
-int is_palindrome_helper(listint_t **head,
-						 listint_t *c_list)
+int is_palindrome_helper(listint_t **head, listint_t *c_list)
 {
 	int is_palindrome;
 
