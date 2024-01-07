@@ -9,11 +9,13 @@
  * Return: return 1 if palindrome and 0 if not
  */
 int is_palindrome_helper(listint_t **head,
-						 listint_t *c_list, int is_palindrome)
+						 listint_t *c_list)
 {
+	int is_palindrome;
+
 	if (!c_list)
-		return (is_palindrome);
-	is_palindrome = is_palindrome_helper(head, c_list->next, is_palindrome);
+		return (1);
+	is_palindrome = is_palindrome_helper(head, c_list->next);
 	if ((*head)->n != c_list->n)
 		is_palindrome = 0;
 	*head = (*head)->next;
@@ -26,5 +28,5 @@ int is_palindrome_helper(listint_t **head,
  */
 int is_palindrome(listint_t **head)
 {
-	return (is_palindrome_helper(head, *head, 1));
+	return (is_palindrome_helper(head, *head));
 }
