@@ -9,21 +9,32 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int list[1000];
+	int *list = malloc(sizeof(int));
 	int size = 0, i = 0;
 	listint_t *c_list = *head;
 
 	while (c_list)
 	{
-		list[size] = c_list->n;
 		c_list = c_list->next;
 		size++;
 	}
+	c_list = *head;
+	list = malloc(sizeof(int) * size);
+	while (c_list)
+	{
+		list[i++] = c_list->n;
+		c_list = c_list->next;
+	}
+	i = 0;
 	while (i < (size - 1) / 2)
 	{
 		if (list[i] != list[size - 1 - i])
+		{
+			free(list);
 			return (0);
+		}
 		i++;
 	}
+	free(list);
 	return (1);
 }
