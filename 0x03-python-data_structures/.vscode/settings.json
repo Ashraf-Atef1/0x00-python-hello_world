@@ -59,6 +59,7 @@
   "files.associations": {
     "lists.h": "c",
     "stddef.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "string": "c"
   }
 }
