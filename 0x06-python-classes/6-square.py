@@ -50,6 +50,6 @@ class Square:
         if not size:
             print()
             return
-        print('{:s}'.format("\n" * position[1]), end="")
+        [print() for i in range(position[1])]
         for x in range(size):
             print(f'{" " * position[0]}{"#" * size}')
