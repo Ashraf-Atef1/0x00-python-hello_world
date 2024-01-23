@@ -8,18 +8,21 @@ class Square:
     """
     A class with privte instance attribute
     """
+
     def __init__(self, size=0, position=(0, 0)):
         """
-            initalization function
+        initalization function
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        if (not isinstance(position, tuple)
-        or len(position) != 2 or
-        not all(isinstance(num, int) and num >= 0 for num in position)):
+        if (
+            not isinstance(position, tuple)
+            or len(position) != 2
+            or not all(isinstance(num, int) and num >= 0 for num in position)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
@@ -27,7 +30,7 @@ class Square:
         """
         function that calculate the square area
         """
-        return self.__size ** 2
+        return self.__size**2
 
     @property
     def size(self):
@@ -51,9 +54,11 @@ class Square:
     @position.setter
     def position(self, position):
         """position setter"""
-        if (not isinstance(position, tuple)
-        or len(position) != 2 or
-        not all(isinstance(num, int) and num >= 0 for num in position)):
+        if (
+            not isinstance(position, tuple)
+            or len(position) != 2
+            or not all(isinstance(num, int) and num >= 0 for num in position)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
@@ -64,6 +69,6 @@ class Square:
         if not size:
             print()
             return
-        print('{:s}'.format("\n" * position[1]), end="")
+        print("{:s}".format("\n" * position[1]), end="")
         for x in range(size):
             print(f'{" " * position[0]}{"#" * size}')
