@@ -74,5 +74,6 @@ class SinglyLinkedList:
         head = self.__head
         string = ""
         while head:
+            string += '{:d}{:s}'.format(head.data, "\n" * int(bool(head.next_node)))
             head = head.next_node
         return string
