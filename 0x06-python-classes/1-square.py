@@ -3,6 +3,7 @@
 This module contain a Square with size privite instance attribute
 """
 
+
 class Square:
     """
     A class with privte instance attribute
