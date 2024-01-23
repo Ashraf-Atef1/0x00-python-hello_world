@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-list_division = __import__('4-list_division').list_division
+Square = __import__('4-square').Square
 
-my_l_1 = [10, 8, 4]
-my_l_2 = [2, 4, 4]
-result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
-print(result)
+my_square = Square(89)
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
 
-print("--")
+my_square.size = 3
+print("Area: {} for size: {}".format(my_square.area(), my_square.size))
 
-my_l_1 = [10, 8, 4, 4]
-my_l_2 = [2, 0, "H", 2, 7]
-result = list_division(my_l_1, my_l_2, max(len(my_l_1), len(my_l_2)))
-print(result)
+try:
+    my_square.size = "5 feet"
+    print("Area: {} for size: {}".format(my_square.area(), my_square.size))
+except Exception as e:
+    print(e)
