@@ -42,8 +42,6 @@ class Square:
         """function that print the square by # chars"""
         size = self.__size
         for x in range(size):
-            for y in range(size):
-                print("#", end="")
-            print()
+            print(f'{"#" * size}')
         if not size:
             print()
