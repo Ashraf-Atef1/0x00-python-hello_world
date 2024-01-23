@@ -45,10 +45,10 @@ class Square:
         """function that print the square by # chars"""
         size = self.__size
         position = self.__position
-        for x in range(size):
-            print(f'{"#" * size}')
         if not size:
             print()
+        for x in range(size):
+            print(f'{"#" * size}')
     # def my_print(self):
     #     """function that print the square by # chars"""
     #     size = self.__size
