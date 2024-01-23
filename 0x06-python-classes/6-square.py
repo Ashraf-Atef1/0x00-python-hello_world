@@ -48,7 +48,7 @@ class Square:
         if not size:
             print()
             return
-        
+        print('{:s}'.format("\n" * position[1]), end="")
         for x in range(size):
             print(f'{" " * position[0]}{"#" * size}')
     # def my_print(self):
