@@ -80,8 +80,9 @@ class Square:
         position = self.__position
         if not size:
             string += "\n"
-            return string
+            return ""
         string += "\n" * position[1]
         for x in range(size):
             string += f'{" " * position[0]}{"#" * size}\n'
-        return string[:-1]
+        print(string[:-1], end="")
+        return ""
