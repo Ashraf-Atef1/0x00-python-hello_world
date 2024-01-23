@@ -77,5 +77,5 @@ class SinglyLinkedList:
             string += '{:d}'.format(head.data)
             head = head.next_node
             if head:
-                string += "\n" * int(bool(head.next_node))
+                string += "\n"
         return string
