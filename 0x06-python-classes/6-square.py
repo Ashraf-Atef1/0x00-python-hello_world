@@ -72,16 +72,3 @@ class Square:
         print("{:s}".format("\n" * position[1]), end="")
         for x in range(size):
             print(f'{" " * position[0]}{"#" * size}')
-    
-    def __str__(self):
-        """print class as a square by #"""
-        string = ""
-        size = self.__size
-        position = self.__position
-        if not size:
-            string += "\n"
-            return string
-        string += "{:s}".format("\n" * position[1])"
-        for x in range(size):
-            string += f'{" " * position[0]}{"#" * size}\n'
-        return string
