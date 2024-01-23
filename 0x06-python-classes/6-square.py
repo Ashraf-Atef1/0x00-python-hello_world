@@ -44,9 +44,9 @@ class Square:
     def my_print(self):
         """function that print the square by # chars"""
         size = self.__size
+        position = self.__position
+        print(f"{'\n' * position[1]}", end="")
         for x in range(size):
-            for y in range(size):
-                print("#", end="")
-            print()
+            print(f'{" " * position[0]}{"#" * size}')
         if not size:
             print()
