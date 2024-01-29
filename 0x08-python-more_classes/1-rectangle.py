@@ -6,7 +6,7 @@ class Rectangle:
     """Rectangle object"""
 
     def __init__(self, width=0, height=0):
-
+        """intialize functon"""
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width < 0:
@@ -15,7 +15,7 @@ class Rectangle:
             raise TypeError("height must be an integer")
         elif height < 0:
             raise ValueError("height must be >= 0")
-        
+
         self.__width = width
         self.__height = height
 
