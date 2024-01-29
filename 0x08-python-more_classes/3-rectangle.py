@@ -63,6 +63,6 @@ class Rectangle:
         width, height = self.__width, self.__height
         to_be_print = ""
         while height and width:
-            to_be_print += "#" * width + ("\n" if height - 1 else "")
             height -= 1
+            to_be_print += "#" * width + ("\n" if height else "")
         return to_be_print
