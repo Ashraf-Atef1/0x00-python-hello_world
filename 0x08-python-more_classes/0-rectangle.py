@@ -1,7 +1,7 @@
 #!/usr/bin/python
-"""module containe empty Rectangle object"""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """Rectangle object"""
+    """Represent a rectangle."""
     pass
