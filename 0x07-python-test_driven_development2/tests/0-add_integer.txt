@@ -1,0 +1,50 @@
+Test cases for "0-add_integer.py" module
+========================================
+import functon from module
+__________________________
+
+>>> add_integer = __import__("0-add_integer").add_integer
+
+base test case: 1 + 2 = 3
+	>>> add_integer(1, 2)
+	3
+
+postive and negtive test case: 100 + -2 = 98
+	>>> add_integer(100, -2)
+	98
+
+one integer test case: 2 = 100
+	>>> add_integer(2)
+	100
+
+one float test case: 100.3 + -2 = 98
+	>>> add_integer(100.3, -2)
+	98
+
+two float test case: 100.3 + -2.7 = 98
+	>>> add_integer(100.3, -2.7)
+	98
+
+a is not integer test case: "hello" + 4 = TypeError
+	>>> add_integer("hello", 4)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+b is not integer test case: 4 + "hello" = TypeError
+	>>> add_integer(4, "hello")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+a and b are not integers test case: "hello" + "there" = TypeError
+	>>> add_integer("hello", "there")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+two integers as string test case: "2" + "3" = 5
+	>>> add_integer("2", "3")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer

@@ -1,0 +1,25 @@
+Test cases for "2-matrix_divided.py" module
+========================================
+import functon from module
+__________________________
+>>>matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+list of integers test case:
+	>>>m = [[1, 2], [3, 4]]
+	>>>matrix_divided(m, 2)
+	[[0.50, 1.00], [1.50, 2.00]]
+
+list of floats test case:
+	>>>m = [[1.0, 2.0], [3.0, 4.0]]
+	>>>matrix_divided(m, 2)
+	[[0.50, 1.00], [1.50, 2.00]]
+
+list of floats and integers test case:
+	>>>m = [[1.0, 2], [3, 4.0]]
+	>>>matrix_divided(m, 2)
+	[[0.50, 1.00], [1.50, 2.00]]
+
+non matrix list test case:
+	>>>m = [[1.0], [3.0, 4.0]]
+	>>>matrix_divided(m, 2)
+	[[0.50, 1.00], [1.50, 2.00]]
