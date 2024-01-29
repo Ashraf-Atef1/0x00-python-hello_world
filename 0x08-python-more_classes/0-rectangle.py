@@ -2,6 +2,6 @@
 """0-rectangle.py: module containe empty Rectangle object"""
 
 
-class Rectangle:
+class Rectangle():
     """Rectangle object"""
     pass
