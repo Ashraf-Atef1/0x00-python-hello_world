@@ -4,4 +4,5 @@
 
 class Rectangle():
     """Rectangle object"""
-    pass
+    def __init__(self) -> None:
+        """ intialize function"""
