@@ -63,4 +63,5 @@ def remove_old(row, col):
 
 
 get_solutions(0)
-print(solutions)
+for solution in solutions:
+    print(solution)
