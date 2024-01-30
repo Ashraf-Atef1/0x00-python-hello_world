@@ -6,7 +6,7 @@ class Rectangle:
     """Rectangle object"""
 
     number_of_instances = 0
-    
+
     def __init__(self, width=0, height=0):
         """intialize functon"""
         if not isinstance(width, int):
@@ -58,8 +58,7 @@ class Rectangle:
 
     def perimeter(self):
         """get rect_perimeter"""
-        return (self.__width and self.__height
-                and 2 * (self.__width + self.__height))
+        return self.__width and self.__height and 2 * (self.__width + self.__height)
 
     def __str__(self):
         """return a represent string"""
