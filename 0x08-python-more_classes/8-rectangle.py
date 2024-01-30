@@ -8,6 +8,7 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Compare between two rectangles and return the bigger one"""
 
