@@ -58,7 +58,8 @@ class Rectangle:
 
     def perimeter(self):
         """get rect_perimeter"""
-        return self.__width and self.__height and 2 * (self.__width + self.__height)
+        return (self.__width and self.__height
+                and 2 * (self.__width + self.__height))
 
     def __str__(self):
         """return a represent string"""
