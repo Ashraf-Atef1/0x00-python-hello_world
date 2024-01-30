@@ -68,7 +68,7 @@ class Rectangle:
         to_be_print = ""
         while height and width:
             height -= 1
-            to_be_print += (Rectangle.print_symbol * width
+            to_be_print += (str(self.print_symbol) * width
                             + ("\n" if height else ""))
         return to_be_print
 
