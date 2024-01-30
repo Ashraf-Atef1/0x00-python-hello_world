@@ -2,7 +2,7 @@
 """N queens puzzle solver"""
 from sys import argv
 
-
+argv = [1, 4]
 if len(argv) != 2:
     print("Usage: nqueens N")
     exit(1)
@@ -73,10 +73,24 @@ def add_new(row, col):
     full_negtive_d.add(row + col)
 def remove_old(row, col):
     old_col = col - 1
-    if col and board[row][old_col]:
-        board[row][old_col] = 0
+    old_row = row
+    if row + 1 < N:
+        for i in board[row + 1]:
+            if i:
+                old_col = N -1
+                old_row = row + 1
+
+    if col and board[old_row][old_col]:
+        board[old_row][old_col] = 0
         full_cols.remove(old_col)
-        full_positve_d.remove(row - old_col)
-        full_negtive_d.remove(row + old_col)
+        full_positve_d.remove(old_row - old_col)
+        full_negtive_d.remove(old_row + old_col)
+    old_col = col - 1
+    old_row = row
+    if col and board[old_row][old_col]:
+        board[old_row][old_col] = 0
+        full_cols.remove(old_col)
+        full_positve_d.remove(old_row - old_col)
+        full_negtive_d.remove(old_row + old_col)
 get_solutions(0)
 print(board)
