@@ -55,6 +55,28 @@ full_positve_d = set()
 full_negtive_d = set()
 solutions = []
 print(board)
-def get_solutions(level):
-
+def get_solutions(row):
+    if row == N -1:
+        print(board)
+        return
+    for col in range(N):
+        remove_old(row, col)
+        if col in full_cols or (row - col) in full_positve_d or (row + col) in full_negtive_d:
+            continue
+        add_new(row, col)
+        get_solutions(row + 1)
+        print(board)
+def add_new(row, col):
+    board[row][col] = 1
+    full_cols.add(col)
+    full_positve_d.add(row - col)
+    full_negtive_d.add(row + col)
+def remove_old(row, col):
+    old_col = col - 1
+    if col and board[row][old_col]:
+        board[row][old_col] = 0
+        full_cols.remove(old_col)
+        full_positve_d.remove(row - old_col)
+        full_negtive_d.remove(row + old_col)
 get_solutions(0)
+print(board)
