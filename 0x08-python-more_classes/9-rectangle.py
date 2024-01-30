@@ -26,7 +26,6 @@ class Rectangle:
         """Retrun square instance"""
         return cls(size, size)
 
-
     def __init__(self, width=0, height=0):
         """intialize functon"""
         if not isinstance(width, int):
