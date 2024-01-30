@@ -21,7 +21,6 @@ except Exception:
     exit(1)
 
 full_cols = set()
-full_rows = set()
 full_positve_d = set()
 full_negtive_d = set()
 c_solution = []
