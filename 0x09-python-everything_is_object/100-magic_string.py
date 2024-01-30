@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-s, magic_string = [], lambda: s.append("BestSchool") or ", ".join(s)
+def magic_string(s = []): 
+	return s.append("BestSchool") or ", ".join(s)
