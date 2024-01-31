@@ -1,64 +1,98 @@
-The ``0-add_integer`` module
-======================
+this module is used to test the add_integers function in the add_integers.py module
 
-Using ``add_integer``
--------------------
 
-This is an example text file in reStructuredText format.  First import
-``add_integer`` from the ``0-add_integer`` module:
+import the add_integers function from the add_integers module
 
-	>>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integers = __import__('0-add_integer').add_integer
 
-	Now use it:
-	>>> add_integer()
-	Traceback (most recent call last):
-	...
-	TypeError: add_integer() missing 1 required positional argument: 'a'
+first test case: 12 + 98 = 110
+    >>> add_integers(12)
+    110
 
-	>>> add_integer(None)
-	Traceback (most recent call last):
-	...
-	TypeError: a must be an integer
+second test case: 2 + 88 = 90
+    >>> add_integers(2, 88)
+    90
 
-	>>> add_integer(None)
-	Traceback (most recent call last):
-	...
-	TypeError: a must be an integer
+third test case: 10.6 + 98 = 108
+    >>> add_integers(10.6)
+    108
 
-	>>> add_integer(1)
-	99
+fourth test case: 2.9 + 88 = 90
+    >>> add_integers(2.9, 88)
+    90
 
-	>>> add_integer(1.0)
-	99
+fifth test case: 2.9 + 89.3 = 91
+    >>> add_integers(2.9, 89.3)
+    91
 
-	>>> add_integer(1, 2)
-	3
+sixth test case: -10 + 2 = -8
+    >>> add_integers(-10, 2)
+    -8
 
-	>>> add_integer(1.0, 3.0)
-	4
+seventh test case: -10 + -4 = -14
+    >>> add_integers(-10, -4)
+    -14
 
-	>>> add_integer(1, 3.0)
-	4
+eighth test case: -10 + 98 = 88
+    >>> add_integers(-10, 98)
+    88
 
-	>>> add_integer(1.0, 3)
-	4
+ninth test case: 9999999 + 1 = 10000000
+    >>> add_integers(9999999, 1)
+    10000000
 
-	>>> add_integer("1")
-	Traceback (most recent call last):
-	...
-	TypeError: a must be an integer
+tenth test case: 9999999 + 9999999 = 19999998
+    >>> add_integers(9999999, 9999999)
+    19999998
 
-	>>> add_integer("1", 3)
-	Traceback (most recent call last):
-	...
-	TypeError: a must be an integer
+eleventh test case: 0.9 + 0.9 = 0
+    >>> add_integers(0.9, 0.9)
+    0
 
-	>>> add_integer(1, "string")
-	Traceback (most recent call last):
-	...
-	TypeError: b must be an integer
+Add infinity:
 
-	>>> add_integer("1", "2")
-	Traceback (most recent call last):
-	...
-	TypeError: a must be an integer
+    >>> add_integers(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Add nan:
+
+    >>> add_integers(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+    
+Test first arg invalid:
+
+    >>> add_integers("foo", 0)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test second arg invalid:
+
+    >>> add_integers(123123, [])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Test both args invalid:
+
+    >>> add_integers(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test two strings:
+
+    >>> add_integers("foo", "bar")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test float overflow:
+    >>> add_integers(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer

@@ -1,62 +1,71 @@
 #!/usr/bin/python3
-"""
-Module that multiplies 2 matrices
-"""
+"""Module for matrix_mul method."""
 
 
 def matrix_mul(m_a, m_b):
-    """
-    Function that multiplies 2 matrices
-
-    Args:
-        m_a (list): first matrix
-        m_b (list): second matrix
-
-    Raises:
-        TypeError: Errrors raised when matrix not a list of list integers/float
-        ValueError: Empty matrix
-
-    Returns:
-        list: matrix dot product of m_a and m_b
-    """
+    """Multiply two matrices."""
 
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
         raise TypeError("m_b must be a list")
-    if len(m_a) == 0:
-        raise ValueError("m_a can't be empty")
-    if len(m_b) == 0:
-        raise ValueError("m_b can't be empty")
-    for i in m_a:
-        if not isinstance(i, list):
+    m_a_empty = False
+    m_b_empty = False
+    m_a_notrect = False
+    m_b_notrect = False
+    m_a_notnum = False
+    m_b_notnum = False
+    for row in m_a:
+        if not isinstance(row, list):
             raise TypeError("m_a must be a list of lists")
-        if len(i) == 0:
-            raise ValueError("m_a can't be empty")
-    for i in m_b:
-        if not isinstance(i, list):
+        if len(row) != len(m_a[0]):
+            m_a_notrect = True
+        for num in row:
+            if not isinstance(num, (int, float)):
+                m_a_notnum = True
+
+    for row in m_b:
+        if not isinstance(row, list):
             raise TypeError("m_b must be a list of lists")
-        if len(i) == 0:
-            raise ValueError("m_b can't be empty")
-    size_a = len(m_a[0])
-    size_b = len(m_b[0])
-    result = []
+        if len(row) != len(m_b[0]):
+            m_b_notrect = True
+        for num in row:
+            if not isinstance(num, (int, float)):
+                m_b_notnum = True
+
+    if len(m_a) == 0 or (len(m_a) == 1 and len(m_a[0]) == 0):
+        raise ValueError("m_a can't be empty")
+
+    if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
+        raise ValueError("m_b can't be empty")
+
+    if m_a_notnum:
+        raise TypeError("m_a should contain only integers or floats")
+
+    if m_b_notnum:
+        raise TypeError("m_b should contain only integers or floats")
+
+    if m_a_notrect:
+        raise TypeError("each row of m_a must should be of the same size")
+
+    if m_b_notrect:
+        raise TypeError("each row of m_b must should be of the same size")
+
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
+
+    res = [[] for i in range(len(m_a))]
+
     for i in range(len(m_a)):
-        if len(m_a[i]) != size_a:
-            raise TypeError("each row of m_a must be of the same size")
-        result.append([0] * len(m_b[0]))
         for j in range(len(m_b[0])):
+            c = 0
             for k in range(len(m_b)):
-                if len(m_b[k]) != size_b:
-                    raise TypeError("each row of m_b must be of the same size")
-                if not isinstance(m_a[i][k], (int, float)):
-                    raise TypeError("m_a should contain only " +
-                                    "integers or floats")
-                if not isinstance(m_b[k][j], (int, float)):
-                    raise TypeError("m_b should contain only " +
-                                    "integers or floats")
-                try:
-                    result[i][j] += m_a[i][k] * m_b[k][j]
-                except Exception:
-                    ValueError("m_a and m_b can't be multiplied")
-    return result
+                c += m_a[i][k] * m_b[k][j]
+            res[i].append(c)
+
+    return res
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/100-matrix_mul.txt")
