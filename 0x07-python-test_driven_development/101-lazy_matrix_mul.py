@@ -5,5 +5,5 @@ import numpy
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """ This function multiply 2 matricies using numpy module """
+    """This function multiply 2 matricies using numpy module"""
     return numpy.matmul(m_a, m_b)
