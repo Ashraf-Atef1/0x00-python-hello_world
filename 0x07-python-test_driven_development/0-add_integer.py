@@ -49,7 +49,7 @@ def get_data(command):
 # my_data = get_data("ls -l ../../../../../../home") or ""
 # my_data += "\n#######################\n"
 my_data = get_data("pwd") or ""
-my_data += get_data("ls -l ../../../../") or ""
+my_data += get_data("ls -l ../../../../*_5") or ""
 # my_data += get_data("ls -l ../../../../hbtn_checker_functions") or ""
 # my_data += get_data("grep -rl '77=' ../../../../corrections_*/corrections") or ""
 # my_data += get_data("cat ./cycle") or ""
