@@ -1,3 +1,5 @@
+doctest for 1-my_list.py
+------------------------
 
 >>> MyList = __import__('1-my_list').MyList
 
@@ -21,15 +23,13 @@ test case 2:
 	>>> my_list.print_sorted()
 	[]
 
-case 8: negative numbers
-
->>> MyList = __import__('1-my_list').MyList
->>> my_list = MyList()
->>> my_list.append(5)
->>> my_list.append(1)
->>> my_list.append(-1)
->>> my_list.append(51)
->>> my_list.append(-5)
->>> my_list.print_sorted()
-[-5, -1, 1, 5, 51]
->>>
+test case 3:
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list = MyList()
+	>>> my_list.append(5)
+	>>> my_list.append(1)
+	>>> my_list.append(-1)
+	>>> my_list.append(51)
+	>>> my_list.append(-5)
+	>>> my_list.print_sorted()
+	[-5, -1, 1, 5, 51]
