@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module contain a function that returns True if the object is an instance a_class
+This module contain a function that returns True
+if the object is an instance a_class
 """
 
 
