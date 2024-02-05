@@ -1,17 +1,9 @@
 #!/usr/bin/python3
-Square = __import__('6-square').Square
+BaseGeometry = __import__('6-base_geometry').BaseGeometry
 
-my_square_1 = Square(3)
-my_square_1.my_print()
+bg = BaseGeometry()
 
-print("--")
-
-my_square_2 = Square(3, (1, 1))
-my_square_2.my_print()
-
-print("--")
-
-my_square_3 = Square(3, (3, 0))
-my_square_3.my_print()
-
-print("--")
+try:
+    print(bg.area())
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
