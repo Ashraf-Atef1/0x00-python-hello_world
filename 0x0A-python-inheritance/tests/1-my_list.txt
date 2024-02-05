@@ -22,8 +22,9 @@ test case 2:
 	[]
 
 test case 3:
-	>>> my_list = [1, 2, 3]
-	>>> my_list.print_sorted()
+	>>> MyList = __import__('1-my_list').MyList
+	>>> my_list2.print_sorted()
 	Traceback (most recent call last):
 		...
-	AttributeError: 'list' object has no attribute 'print_sorted'
+	NameError: name 'my_list2' is not defined
+	>>>
