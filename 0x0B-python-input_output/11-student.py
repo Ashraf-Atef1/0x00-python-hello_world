@@ -2,7 +2,6 @@
 """
 This module contain a class Student that defines a student
 """
-import json as js
 
 
 class Student:
@@ -22,7 +21,5 @@ class Student:
         return my_dict
     def reload_from_json(self, json):
         """update instance attrbutes from a json file"""
-        with open(json, "r") as f:
-            my_dict = js.load(f)
-            for key, value in my_dict.items():
-                setattr(self, key, value)
+        for key, value in json.items():
+            setattr(self, key, value)
