@@ -19,6 +19,7 @@ class Student:
             if not isinstance(attrs, list) or key in attrs:
                 my_dict[key] = value
         return my_dict
+
     def reload_from_json(self, json):
         """update instance attrbutes from a json file"""
         for key, value in json.items():
