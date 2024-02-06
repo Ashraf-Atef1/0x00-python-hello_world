@@ -18,7 +18,8 @@ def pascal_triangle(n):
         level_list = [1, level]
         for number in range(1, old_mid):
             level_list.append(
-                triangle_list[level - 1][number] + triangle_list[level - 1][number + 1]
+                triangle_list[level - 1][number] +
+                triangle_list[level - 1][number + 1]
             )
         if level % 2:
             new_mid = level_list[-1] * 2
