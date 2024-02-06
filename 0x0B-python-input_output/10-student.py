@@ -16,6 +16,6 @@ class Student:
         """convert instance into a json object"""
         my_dict = {}
         for key, value in self.__dict__.items():
-            if not attrs or key in attrs:
+            if not isinstance(attrs, list) or key in attrs:
                 my_dict[key] = value
         return my_dict
