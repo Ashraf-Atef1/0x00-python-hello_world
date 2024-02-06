@@ -5,7 +5,7 @@ and returns the number of characters appended
 """
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """
     A function that append a string to a text file (UTF8)
     and returns the number of characters appended
