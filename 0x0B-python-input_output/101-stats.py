@@ -29,3 +29,4 @@ except KeyboardInterrupt:
     for key, value in codes_dictionary.items():
         if value:
             print(f"{key}: {value}")
+    raise
