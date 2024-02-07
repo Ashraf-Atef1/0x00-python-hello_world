@@ -12,7 +12,7 @@ try:
     for line in sys.stdin:
         try:
             if (line.split())[-2] in codes_list:
-                codes_dictionary[(line.split())[7]] += 1
+                codes_dictionary[(line.split())[-2]] += 1
         except Exception:
             pass
         try:
