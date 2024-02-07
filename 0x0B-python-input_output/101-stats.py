@@ -27,6 +27,5 @@ try:
 except KeyboardInterrupt:
     print(f"File size: {TOTAL_FILE_SIZE}")
     for key, value in codes_dictionary.items():
-        if value != 0:
+        if value:
             print(f"{key}: {value}")
-    traceback.print_exc()
