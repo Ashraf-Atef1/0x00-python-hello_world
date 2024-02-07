@@ -20,12 +20,9 @@ try:
                 if value:
                     print(f"{key}: {value}")
             COUNT = 0
-    for key, value in codes_dictionary.items():
-        if value:
-            print(f"{key}: {value}")
 except KeyboardInterrupt:
     print(f"File size: {TOTAL_FILE_SIZE}")
     for key, value in codes_dictionary.items():
-        if value != 0:
+        if value > 0:
             print(f"{key}: {value}")
-    traceback.print_exc()
+    sys.exit(0)
