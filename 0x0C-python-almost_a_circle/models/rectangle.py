@@ -106,9 +106,12 @@ class Rectangle(Base):
         """update class atrbutes"""
         keys = ("id", "width", "height", "x", "y")
         for key, value in zip(keys, args):
-            setattr(self, key, value)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+            if isinstance(value, int):
+                    setattr(self, key, value)
+        if not args:
+            for key, value in kwargs.items():
+                if isinstance(value, int):
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """get dictionary copy of the class"""

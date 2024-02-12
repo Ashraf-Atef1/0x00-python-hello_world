@@ -36,7 +36,7 @@ class Base:
             if list_objs else []
         )
         with open(f"{cls.__name__}.json", "w") as f:
-            f.write(Base.to_json_string(list_dict) + "\n")
+            f.write(Base.to_json_string(list_dict))
 
     @staticmethod
     def from_json_string(json_string):
@@ -92,12 +92,15 @@ class Base:
                 csv_list.append(inst_list)
 
         with open(f"{class_name}.csv", "w") as f:
-            if class_name == "Square":
-                f.write(",".join(s_keys) + "\n")
-            elif class_name == "Rectangle":
-                f.write(",".join(r_keys) + "\n")
-            for row in csv_list:
-                f.write(",".join(row) + "\n")
+            if list_objs:
+                if class_name == "Square":
+                    f.write(",".join(s_keys) + "\n")
+                elif class_name == "Rectangle":
+                    f.write(",".join(r_keys) + "\n")
+                for row in csv_list:
+                    f.write(",".join(row) + "\n")
+            else:
+                f.write("[]")
 
     @classmethod
     def load_from_file_csv(cls):
