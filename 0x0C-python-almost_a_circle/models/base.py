@@ -65,7 +65,8 @@ class Base:
         """Create instanse from a json file"""
         try:
             with open(f"{cls.__name__}.json", "r") as f:
-                return [cls.create(**inst) for inst in json.load(f)]
+                return [cls.create(**inst) for inst in 
+                        cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
 
