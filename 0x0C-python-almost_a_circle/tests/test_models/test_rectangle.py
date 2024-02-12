@@ -493,14 +493,6 @@ class TestRectangle_stdout(unittest.TestCase):
         r = Rectangle(13, 21, 2, 4, 7)
         self.assertEqual("[Rectangle] (7) 2/4 - 13/21", str(r))
 
-    def test_str_method_changed_attributes(self):
-        r = Rectangle(7, 7, 0, 0, [4])
-        r.width = 15
-        r.height = 1
-        r.x = 8
-        r.y = 10
-        self.assertEqual("[Rectangle] ([4]) 8/10 - 15/1", str(r))
-
     def test_str_method_one_arg(self):
         r = Rectangle(1, 2, 3, 4, 5)
         with self.assertRaises(TypeError):

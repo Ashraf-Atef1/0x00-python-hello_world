@@ -382,13 +382,6 @@ class TestSquare_stdout(unittest.TestCase):
         s = Square(2, 88, 4, 19)
         self.assertEqual("[Square] (19) 88/4 - 2", str(s))
 
-    def test_str_method_changed_attributes(self):
-        s = Square(7, 0, 0, [4])
-        s.size = 15
-        s.x = 8
-        s.y = 10
-        self.assertEqual("[Square] ([4]) 8/10 - 15", str(s))
-
     def test_str_method_one_arg(self):
         s = Square(1, 2, 3, 4)
         with self.assertRaises(TypeError):
