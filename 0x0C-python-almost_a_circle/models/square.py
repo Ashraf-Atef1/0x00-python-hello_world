@@ -31,12 +31,14 @@ class Square(Rectangle):
         """update class atrbutes"""
         keys = ("id", "size", "x", "y")
         for key, value in zip(keys, args):
-            if isinstance(value, int):
-                    setattr(self, key, value)
+            if key == "id" and not isinstance(value, int):
+                continue
+            setattr(self, key, value)
         if not args:
             for key, value in kwargs.items():
-                if isinstance(value, int):
-                    setattr(self, key, value)
+                if key == "id" and not isinstance(value, int):
+                    continue
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """get dictionary copy of the class"""
