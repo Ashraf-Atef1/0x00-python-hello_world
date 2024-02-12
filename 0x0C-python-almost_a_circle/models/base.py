@@ -32,7 +32,8 @@ class Base:
         """Make a JSON class file represntation"""
 
         list_dict = (
-            [*map(lambda self: self.to_dictionary(), list_objs)] if list_objs else []
+            [*map(lambda self: self.to_dictionary(), list_objs)]
+            if list_objs else []
         )
         with open(f"{cls.__name__}.json", "w") as f:
             f.write(Base.to_json_string(list_dict) + "\n")
@@ -64,7 +65,8 @@ class Base:
         """Create instanse from a json file"""
         try:
             with open(f"{cls.__name__}.json", "r") as f:
-                return [cls.create(**inst) for inst in cls.from_json_string(f.read())]
+                return [cls.create(**inst) for inst in
+                        cls.from_json_string(f.read())]
         except FileNotFoundError:
             return []
 
@@ -76,7 +78,8 @@ class Base:
         s_keys = ("id", "size", "x", "y")
         class_name = cls.__name__
         list_dict = (
-            [*map(lambda self: self.to_dictionary(), list_objs)] if list_objs else []
+            [*map(lambda self: self.to_dictionary(), list_objs)]
+            if list_objs else []
         )
         csv_list = []
         for inst_dict in list_dict:
