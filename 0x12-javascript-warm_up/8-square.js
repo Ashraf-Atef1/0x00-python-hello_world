@@ -6,4 +6,4 @@ while (i > 0) {
   console.log('x'.repeat(Number));
   i--;
 }
-isNaN(Number) && console.log('Missing number of occurrences');
+isNaN(Number) && console.log('Missing size');
