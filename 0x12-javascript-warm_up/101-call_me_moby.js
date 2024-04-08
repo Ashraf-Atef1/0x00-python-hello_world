@@ -1,6 +1,6 @@
 #!/usr/bin/node
 function callMeMoby (x, theFunction) {
-  while (x--) {
+  while (0 < x--) {
     theFunction();
   }
 }
