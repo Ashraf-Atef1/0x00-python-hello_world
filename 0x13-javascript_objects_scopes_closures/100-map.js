@@ -6,4 +6,5 @@ const newData = data.map((e) => {
   oldNum = e;
   return e * tmp;
 });
+console.log(data);
 console.log(newData);
