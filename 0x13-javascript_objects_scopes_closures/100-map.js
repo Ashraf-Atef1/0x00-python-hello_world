@@ -1,5 +1,9 @@
 #!/usr/bin/node
 const data = require('./100-data').list;
-const newData = [];
-data.reduce((a, b) => newData.push(a * b), 0);
+let oldNum = 0;
+const newData = data.map((e) => {
+  const tmp = oldNum;
+  oldNum = e;
+  return e * tmp;
+});
 console.log(newData);
