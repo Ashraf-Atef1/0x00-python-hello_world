@@ -16,4 +16,4 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
     value = session.query(State).first()
-    print(f'{value.id}: {value.name}')
+    print(f'{value.id}: {value.name}' if value else 'Nothing')
