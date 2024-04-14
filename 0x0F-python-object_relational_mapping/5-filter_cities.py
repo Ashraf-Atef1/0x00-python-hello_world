@@ -14,5 +14,5 @@ if __name__ == "__main__":
                 WHERE states.name=%s"""
     cur.execute(query, (sys.argv[4],))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    results = [row[0] for row in rows]
+    print(*results, sep=", ")
