@@ -2,16 +2,16 @@
 """finds a peak in a list of unsorted integers"""
 
 
-def find_peak(list_of_integers):
+def find_peak(lst):
     """ Function that finds a peak in a list of unsorted integers """
-    length = len(list_of_integers)
-    m = length // 2
+    length = len(lst)
     if length == 0:
         return None
-    def peak(lst, length, m):
+    def peak(length, m):
+        """" Helper function to find the peak """
         if (m == 0 or lst[m] >= lst[m - 1]) and (m == length - 1 or lst[m] >= lst[m + 1]):
             return lst[m]
         if m > 0 and lst[m - 1] > lst[m]:
-            return peak(lst, m, m // 2)
-        return peak(lst, length, m + (length - m) // 2)
-    return peak(list_of_integers, length, m)
+            return peak(m, m // 2)
+        return peak(length, m + (length - m) // 2)
+    return peak(length, length // 2)
