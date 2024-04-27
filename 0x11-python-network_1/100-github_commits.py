@@ -10,4 +10,4 @@ if __name__ == "__main__":
         for commit in res.json():
             print("{}: {}"
                   .format(commit.get("sha"),
-                          commit.get("commit").get("committer").get("name")))
+                          commit.get("commit").get("author").get("name")))
