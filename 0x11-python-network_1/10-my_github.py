@@ -6,5 +6,6 @@ import requests
 
 
 if __name__ == "__main__":
-    with requests.get("https://api.github.com/user", auth=(argv[1], argv[2])) as res:
+    with requests.get("https://api.github.com/user",
+                      auth=(argv[1], argv[2])) as res:
         print(res.json().get("id"))
