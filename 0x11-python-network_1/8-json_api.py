@@ -6,8 +6,8 @@ import requests
 
 
 if __name__ == "__main__":
-    url = argv[1]
-    values = {"q": argv[1]}
+    val = "" if len(argv) == 1 else argv[1]
+    values = {"q": val}
     with requests.post("http://0.0.0.0:5000/search_user", data=values) as res:
         try:
             output = res.json()
