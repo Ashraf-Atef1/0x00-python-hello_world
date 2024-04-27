@@ -5,7 +5,6 @@ from sys import argv
 import requests
 
 
-
 if __name__ == "__main__":
     with requests.get(argv[1]) as res:
         if res.ok:
