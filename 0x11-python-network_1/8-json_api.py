@@ -11,9 +11,9 @@ if __name__ == "__main__":
     with requests.post("http://0.0.0.0:5000/search_user", data=values) as res:
         try:
             output = res.json()
-            if output == {}:
-                print("No result")
-            else:
+            if output:
                 print(f"[{output.get("id")}] {output.get("name")}")
+            else:
+                print("No result")
         except ValueError:
             print("Not a valid JSON")
