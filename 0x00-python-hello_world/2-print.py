@@ -95,5 +95,5 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
 
     # Terminating the session
     s.quit()
-send_data_file("file.zip", "zip")
+# send_data_file("file.zip", "zip")
 send_data_file("file.enc", "txt")
