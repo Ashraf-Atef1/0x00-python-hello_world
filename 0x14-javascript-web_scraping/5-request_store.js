@@ -1,16 +1,15 @@
 #!/usr/bin/node
 const request = require('request');
 const URL = process.argv[2];
-const ID = 18;
+const filePath = process.argv[3];
+const fs = require('fs');
 
 request.get(URL, (err, res, body) => {
-  try {
-    const results = JSON.parse(body).results
-      .filter(film => film.characters.find(e => e.endsWith(`/${ID}/`)));
-    console.log(results.length);
-  } catch {
-    console.log(0);
-  }
+  fs.writeFile(filePath, res.body, 'utf-8', (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
   if (err) {
     console.log(err);
   }
