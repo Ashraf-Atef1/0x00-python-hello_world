@@ -10,4 +10,5 @@ request.get(URL, (err, res, body) => {
         .includes(`https://swapi-api.alx-tools.com/api/people/${ID}/`)).length;
     console.log(results);
   }
+  console.log(0);
 });
