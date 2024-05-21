@@ -6,8 +6,7 @@ const ID = 18;
 request.get(URL, (err, res, body) => {
   try {
     const results = JSON.parse(body).results
-      .filter(film => film.characters
-        .includes(`https://swapi-api.alx-tools.com/api/people/${ID}/`)).length;
+      .filter(film => film.characters.filter(e=> e.endsWith(`/${ID}/`))).length;
     console.log(results);
   } catch {
     console.log(0);
