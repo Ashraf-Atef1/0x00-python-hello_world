@@ -4,12 +4,12 @@ const URL = process.argv[2];
 
 request.get(URL, (err, res) => {
   const results = {};
-  JSON.parse(res.body).map(task => {
-    if (results[task.userId] === undefined) {
-      results[task.userId] = 0;
+  JSON.parse(res.body).forEach(task => {
+    if (task.completed && results[task.userId] === undefined) {
+      results[task.userId] = 1;
+    } else if (task.completed) {
+      results[task.userId] += 1;
     }
-    results[task.userId] += task.completed;
-    return task;
   });
   console.log(results);
   if (err) {
