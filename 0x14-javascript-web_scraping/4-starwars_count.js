@@ -6,7 +6,7 @@ const ID = 18;
 request.get(URL, (err, res, body) => {
   try {
     const results = JSON.parse(body).results
-      .filter(film => film.characters.filter(e => e.endsWith(`/${ID}/`)).length);
+      .filter(film => film.characters.find(e => e.endsWith(`/${ID}/`)));
     console.log(results.length);
   } catch {
     console.log(0);
