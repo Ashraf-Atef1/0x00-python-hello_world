@@ -9,6 +9,7 @@ request.get(URL, (err, res, body) => {
       .filter(film => film.characters
         .includes(`https://swapi-api.alx-tools.com/api/people/${ID}/`)).length;
     console.log(results);
+  } else {
+    console.log(0);
   }
-  console.log(0);
 });
